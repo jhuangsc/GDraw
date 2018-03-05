@@ -1,0 +1,44 @@
+Shift = Ruler
+
+B = Pencil
+  MouseWheel = Toggle Random/Normal colors
+  RightMouse = White circular pencil
+         1~0 = Size
+  NumPad 1~9 = Offsets
+     Alt+1~2 = Shape
+     Alt+3~4 = Fill/Outline
+         Tab = Toggle AlwaysDraw
+
+E = Eraser 
+  1~0 = Size
+  Tab = Toggle AlwaysErase
+
+I = Eyedropper 
+
+P = Palette 
+  1~0 = Input numbers: Total 9 needed
+
+W = Marquee Eraser
+
+F = Fill - NOTE: Fill is not contiguous 
+  1~0 = Set tolerance (multiples of 0.10 (and 0.00))
+    = = Set tolerance 1.00
+
+L = Line 
+  1~0 = Width
+
+* Shape
+  O = Ellipse
+  C = Circle
+  R = Rectangle
+  S = Square
+  Alt+1~2 = Fill/Outline
+
+Ctrl-N = Clear Canvas
+Ctrl-S = Save 
+Ctrl-O = Open (incomplete)
+Ctrl-X = Cut (incomplete)
+Ctrl-C = Copy (incomplete)
+Ctrl-V = Paste (incomplete)
+
+--------------------

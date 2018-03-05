@@ -1,0 +1,54 @@
+* Bug/issue found
+# Feature added
+
+GDraw - by Jonathan Huang (ICS2O1-02)
+
+# Jan 01 - Pencil and Eraser tools added. New Canvas function added. Features implemented are Offsets and Random Color for the Pencil, and Always Draw/Erase for both tools, which allows the user to draw without clicking. As well, the Pencil contains a right-click draw mode that acts similarly to the eraser (but is more basic). 
+
+* Jan 02 - Pencil offsets were improperly set up and did not draw at their intended locations. This was fixed by a thorough redo of the offset positioning. 
+
+# Jan 03 - Eyedropper and Fill tools added. Ruler function being implemented. Added placeholders for the planned functions, which will be modified once I find out how to detect key modifiers (shift, ctrl, etc.) Additionally, the Fill tool is not yet contiguous. 
+
+* Jan 04 - Ruler did not toggle off properly. Fixed by simply changing the disable condition from an elif to an else. Additionally, it now works for all tools.
+
+# Jan 04 - Ruler tool fully implemented. One issue is that it does not yet allow drawing in a straight diagonal line. This may be implemented later, but is low in priority.
+
+* Jan 05 - Discovered that the Eyedropper tool was able to continuously pick up colors if the mouse button was held down and the mouse moved, which would cause a significant inconvenience for users. This was resolved by adding a boolean that only allowed one color to be picked up for each click. 
+
+# Jan 05 - Line, Rectangle and Square tools added. Save function added - note that this is currently very basic and merely saves the canvas as a PNG with a randomly generated 12-character file name, prefixed by "g_". 
+
+* Jan 05 - Square tool did not draw properly except when being drawn diagonally to the bottom right, otherwise it drew at odd positions, i.e. far above the cursor. Fixed by using different top_left_XY positions when the end point's XY were not both greater than the start point's. 
+
+# Jan 06 - Added Ellipse tool. Implemented Filled/Outline draw modes for Shape tools, as well as width adjustments for the Line tool.
+
+* Jan 06 - Found that the Circle tool did not draw with the correct radius. This was resolved by changing how the Radius argument was calculated.
+
+# Jan 07 - Basic Palette tool added. This allows the user to type in 9 numbers which are converted into an RGB value to be used as the main draw color. 
+
+* Jan 08 - After implementing separated screen output for the Palette tool (one output for the R, G and B values, then for the combined RGB) the tool failed to work, being only able to gather 6 of the 9 numbers before being stuck in an infinite loop (until another tool was selected or the program closed). This was fixed by rewriting the output formatting procedure. 
+
+* Jan 09 - Attempting to implement a custom cursor failed. This was resolved by searching through the pygame documentation and discovering that certain arguments in the relevant functions needed to be tuples. 
+
+* Jan 10 - After implementing dictionaries and additional functions to vastly improve performance with some tools, most tool modifications still worked properly and line count was decreased by around 100. However, the Pencil's Offset feature failed to work. This was fixed by changing the arguments needed by the function that enabled or disabled the offsets.
+
+* Jan 11 - Ruler failed for some reason. Fixed by changing the order of a few relevant variables.
+
+* Jan 12 - Previews implemented for most tools. You can now see the pencil, eraser, etc. brushes before drawing and you can see the shapes as you drag them.
+
+# Jan 13 - Added the graphics of the GUI. Not functional yet. This caused an issue with the Save function that saved a width by 50 bar of white above each image.
+
+* Jan 14 - Fixed the issue with the Save function.
+
+* Jan 15 - Found an issue with the Square and Selector(Preview) tools where if the mouse cursor was above the origin point on the Y axis, the origin point would start to move around. This was resolved by changing the Rectangle values (topleftX, topleftY, width, height) used by both. 
+
+# Jan 16 - Determined that between summatives and other work from other courses, there would not be enough time to implement the Selector, MoveSelection, DeleteSelection, Cut, Copy and Paste tools at a satisfactory level of quality. The latter five have been replaced with placeholders, which were used to ensure that the GUI sections to access them were working properly, and the Selector was replaced with the Marquee Eraser, which erases in a box similar to the Rectangle tool.
+
+* Jan 17 - Attempted to implement sub-toolbars, starting with the Pencil tool. Completed a procedure that draws the sub-toolbar buttons, draws depressed buttons where appropriate, and then draws the tool icons on top. Ran into two issues: In one situation, the buttons are drawn properly and update properly when settings are changed through hotkeys, but are not clickable. An attempted fix made the buttons draw improperly and did not make them clickable. Working on another fix.
+
+# Jan 18 - Added a feature to the Eyedropper and Palette. The Eyedropper now has a sub-toolbar that shows the shade of the pixel at the cursor in a small box, which updates whenever the cursor moves. The Palette now shows the currently selected color in its toolbar icon.
+
+* Jan 19 - Due to time constraints from other summatives, I feel that I will be unable to complete the GUI in time. The Jan 17 issue, however, has been resolved by using .convert_alpha() on several key surfaces.
+
+# Jan 19 - Virtually all GUI issues resolved (hopefully). However, subtoolbars have only been implemented for the Pencil, Eraser, Eyedropper and Fill tools. 
+
+* Jan 20 - Found a bug with the Square tool: when the cursor is released over the toolbar area, the square draws as if it was released at the boundary between the canvas and toolbar. No time to fix before submission, unfortunately.
